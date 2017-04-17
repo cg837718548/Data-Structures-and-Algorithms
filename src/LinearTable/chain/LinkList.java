@@ -176,4 +176,28 @@ public class LinkList {
 		return mid;
 	}
 	
+	/*
+	 * 判断链表中是否有环
+	 */
+	public void isHuan(){
+		int pos = 0;
+		int jishu = 0;
+		Node temp = first;
+		Node target = first;
+		
+		while(target.next!=null){
+			target = target.next;
+			pos++;
+			for(;temp.getData()!=target.getData();temp = temp.next){
+				jishu++;
+			}
+			if(jishu !=pos){
+				System.out.println("该链表存在环");
+				return ;
+			}
+			temp = first;
+			jishu = 0;
+		}
+	}
+	
 }
