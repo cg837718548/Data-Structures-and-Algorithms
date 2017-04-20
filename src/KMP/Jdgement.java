@@ -70,5 +70,6 @@ public class Jdgement {
 		judge("abg", "abc");
 		judge("asd", "qwe");
 		judge("a","aaaaaa");
+		judge("wasd", "sfjdgjdbshajfwasdfhuiea");
 	}
 }
