@@ -28,7 +28,7 @@ public class BinaryTree {
 	}
 
 	/*
-	 * 谦虚遍历二叉树的节点
+	 * 前序遍历二叉树的节点
 	 */
 	public static void preorderTraversal(Node T, int level) {
 		if (T != null) {
