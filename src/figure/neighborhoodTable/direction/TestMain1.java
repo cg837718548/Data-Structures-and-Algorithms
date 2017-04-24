@@ -11,7 +11,7 @@ import figure.neighborhoodTable.direction.directionTable.Table;
  * @author 83771
  *
  */
-public class TestMain {
+public class TestMain1 {
 
 	public static void main(String[] args) {
 		TableYuansu yuansu1 = new TableYuansu("1111");
