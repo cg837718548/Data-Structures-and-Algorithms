@@ -1,15 +1,19 @@
-package figure.neighborhoodTable.direction;
+package figure.neighborhoodTable.direction.directionTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import figure.neighborhoodTable.direction.LinkList;
+import figure.neighborhoodTable.direction.Node;
+import figure.neighborhoodTable.direction.TableYuansu;
+
 /**
- * 邻接表
+ * 邻接表（出表）
  * 
  * @author 83771
  *
  */
-public class Table {
+public class ChuTable {
 
 	private List<TableYuansu> allyuansu = new ArrayList<TableYuansu>();
 
@@ -24,8 +28,16 @@ public class Table {
 	public void setConnet(TableYuansu t1, TableYuansu t2) {
 
 		// 获取元素的列表，并在该列表里添加值
-		t1.getLinkList().insertHead(allyuansu.indexOf(t2));
+		// t1.getLinkList().insertHead(allyuansu.indexOf(t2));
 		t2.getLinkList().insertHead(allyuansu.indexOf(t1));
+	}
+
+	// 设置节点的连接情况
+	public void setConnet(TableYuansu t1, TableYuansu t2, int pow) {
+
+		// 获取元素的列表，并在该列表里添加值
+		// t1.getLinkList().insertHead(allyuansu.indexOf(t2));
+		t2.getLinkList().insertHead(allyuansu.indexOf(t1),pow);
 	}
 
 	// 打印出所有的结点连接情况
@@ -34,7 +46,7 @@ public class Table {
 			LinkList linkList = yuansu.getLinkList();
 			List<Node> nodes = linkList.showAlldata();
 			for (Node node : nodes) {
-				System.out.println(yuansu.getData() + "和" + allyuansu.get(node.getData()).getData() + "相连接 ");
+				System.out.println(yuansu.getData() + ">>>>>>" + allyuansu.get(node.getData()).getData()+"权为："+node.getPow());
 			}
 		}
 	}

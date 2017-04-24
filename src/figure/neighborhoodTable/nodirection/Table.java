@@ -1,19 +1,15 @@
-package figure.neighborhoodTable.nodirection.directionTable;
+package figure.neighborhoodTable.nodirection;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import figure.neighborhoodTable.nodirection.LinkList;
-import figure.neighborhoodTable.nodirection.Node;
-import figure.neighborhoodTable.nodirection.TableYuansu;
-
 /**
- * 邻接表(入表)
+ * 邻接表
  * 
  * @author 83771
  *
  */
-public class RuTable {
+public class Table {
 
 	private List<TableYuansu> allyuansu = new ArrayList<TableYuansu>();
 
@@ -29,15 +25,7 @@ public class RuTable {
 
 		// 获取元素的列表，并在该列表里添加值
 		t1.getLinkList().insertHead(allyuansu.indexOf(t2));
-		// t2.getLinkList().insertHead(allyuansu.indexOf(t1));
-	}
-
-	// 设置节点的连接情况
-	public void setConnet(TableYuansu t1, TableYuansu t2, int pow) {
-
-		// 获取元素的列表，并在该列表里添加值
-		t1.getLinkList().insertHead(allyuansu.indexOf(t2),pow);
-		// t2.getLinkList().insertHead(allyuansu.indexOf(t1));
+		t2.getLinkList().insertHead(allyuansu.indexOf(t1));
 	}
 
 	// 打印出所有的结点连接情况
@@ -46,7 +34,7 @@ public class RuTable {
 			LinkList linkList = yuansu.getLinkList();
 			List<Node> nodes = linkList.showAlldata();
 			for (Node node : nodes) {
-				System.out.println(yuansu.getData() + "<<<<<<" + allyuansu.get(node.getData()).getData()+"权为："+node.getPow());
+				System.out.println(yuansu.getData() + "和" + allyuansu.get(node.getData()).getData() + "相连接 ");
 			}
 		}
 	}

@@ -28,18 +28,6 @@ public class LinkList {
 	}
 	
 	/*
-	 * 插入头节点
-	 */
-	public void insertHead(int data , int pow){
-		//定义一个节点
-		Node node = new Node(data,pow);
-		//将该节点的next设为null
-		node.next  = first;
-		//将该节点变量名变为first
-		first = node;
-	}
-	
-	/*
 	 * 删除头节点
 	 */
 	public Node deleteHead(){

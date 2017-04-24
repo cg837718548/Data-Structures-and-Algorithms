@@ -65,4 +65,22 @@ public class NeighborhoodMatrix {
 		System.out.println(strs.length);
 
 	}
+
+	public List<Node> getSerialNumbers() {
+		return serialNumbers;
+	}
+
+	public void setSerialNumbers(List<Node> serialNumbers) {
+		this.serialNumbers = serialNumbers;
+	}
+
+	public int[][] getMatrix() {
+		return matrix;
+	}
+
+	public void setMatrix(int[][] matrix) {
+		this.matrix = matrix;
+	}
+	
+	
 }

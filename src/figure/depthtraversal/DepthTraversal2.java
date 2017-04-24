@@ -7,12 +7,12 @@ import figure.neighborhoodMatrix.direction.NeighborhoodMatrix;
 import figure.neighborhoodMatrix.direction.Node;
 
 /**
- * 图的深度遍历(邻接矩阵版)
+ * 图的深度遍历(邻接表版)
  * 
  * @author 83771
  *
  */
-public class DepthTraversal {
+public class DepthTraversal2 {
 
 	public static void main(String[] args) {
 		List<Node> lists = new ArrayList<>();

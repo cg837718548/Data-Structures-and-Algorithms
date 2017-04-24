@@ -3,6 +3,8 @@ package figure.neighborhoodTable.direction;
 import java.util.LinkedList;
 import java.util.List;
 
+import figure.neighborhoodTable.direction.directionTable.Table;
+
 /**
  * 无方向邻接表测试类
  * 
@@ -24,13 +26,13 @@ public class TestMain {
 		lists.add(yuansu4);
 		lists.add(yuansu5);
 		Table table = new Table();
-		 table.initTable(lists);
-		 
-		 table.setConnet(yuansu1, yuansu5);
-		 table.setConnet(yuansu2, yuansu4);
-		 table.setConnet(yuansu3, yuansu2);
-		 
-		 table.outputAll();
-		 
+		table.initTable(lists);
+
+		table.setConnet(yuansu1, yuansu5,2);
+		table.setConnet(yuansu2, yuansu4,8);
+		table.setConnet(yuansu3, yuansu2,4);
+
+		table.outputAll();
+
 	}
 }

@@ -1,10 +1,10 @@
-package figure.neighborhoodTable.nodirection.directionTable;
+package figure.neighborhoodTable.direction.directionTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import figure.neighborhoodTable.nodirection.LinkList;
-import figure.neighborhoodTable.nodirection.TableYuansu;
+import figure.neighborhoodTable.direction.LinkList;
+import figure.neighborhoodTable.direction.TableYuansu;
 
 /**
  * аз╫с╠М
