@@ -29,7 +29,7 @@ public class ChuTable {
 
 		// 获取元素的列表，并在该列表里添加值
 		// t1.getLinkList().insertHead(allyuansu.indexOf(t2));
-		t2.getLinkList().insertHead(allyuansu.indexOf(t1));
+		t1.getLinkList().insertHead(allyuansu.indexOf(t2));
 	}
 
 	// 设置节点的连接情况
@@ -37,7 +37,7 @@ public class ChuTable {
 
 		// 获取元素的列表，并在该列表里添加值
 		// t1.getLinkList().insertHead(allyuansu.indexOf(t2));
-		t2.getLinkList().insertHead(allyuansu.indexOf(t1),pow);
+		t1.getLinkList().insertHead(allyuansu.indexOf(t2),pow);
 	}
 
 	// 打印出所有的结点连接情况
@@ -50,4 +50,14 @@ public class ChuTable {
 			}
 		}
 	}
+
+	public List<TableYuansu> getAllyuansu() {
+		return allyuansu;
+	}
+
+	public void setAllyuansu(List<TableYuansu> allyuansu) {
+		this.allyuansu = allyuansu;
+	}
+	
+	
 }

@@ -58,4 +58,14 @@ public class Table {
 //			}
 //		}
 	}
+
+	public List<TableYuansu> getAllyuansu() {
+		return allyuansu;
+	}
+
+	public void setAllyuansu(List<TableYuansu> allyuansu) {
+		this.allyuansu = allyuansu;
+	}
+	
+	
 }

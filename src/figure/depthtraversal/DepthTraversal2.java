@@ -1,10 +1,14 @@
 package figure.depthtraversal;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-import figure.neighborhoodMatrix.direction.NeighborhoodMatrix;
-import figure.neighborhoodMatrix.direction.Node;
+import figure.neighborhoodTable.direction.LinkList;
+import figure.neighborhoodTable.direction.Node;
+import figure.neighborhoodTable.direction.directionTable.ChuTable;
+import figure.neighborhoodTable.direction.directionTable.RuTable;
+import figure.neighborhoodTable.direction.TableYuansu;
 
 /**
  * 图的深度遍历(邻接表版)
@@ -14,53 +18,66 @@ import figure.neighborhoodMatrix.direction.Node;
  */
 public class DepthTraversal2 {
 
+	public static List<Integer> exitList = new ArrayList<>();
+
 	public static void main(String[] args) {
-		List<Node> lists = new ArrayList<>();
-		Node node1 = new Node("111");
-		lists.add(node1);
-		Node node2 = new Node("112");
-		lists.add(node2);
-		Node node3 = new Node("113");
-		lists.add(node3);
-		Node node4 = new Node("114");
-		lists.add(node4);
-		Node node5 = new Node("115");
-		lists.add(node5);
-		Node node6 = new Node("116");
-		lists.add(node6);
+		TableYuansu yuansu1 = new TableYuansu("1111");
+		TableYuansu yuansu2 = new TableYuansu("1112");
+		TableYuansu yuansu3 = new TableYuansu("1113");
+		TableYuansu yuansu4 = new TableYuansu("1114");
+		TableYuansu yuansu5 = new TableYuansu("1115");
+		TableYuansu yuansu6 = new TableYuansu("1116");
+		List<TableYuansu> lists = new LinkedList<>();
+		lists.add(yuansu1);
+		lists.add(yuansu2);
+		lists.add(yuansu3);
+		lists.add(yuansu4);
+		lists.add(yuansu5);
+		lists.add(yuansu6);
+		ChuTable table = new ChuTable();
+		table.initTable(lists);
 
-		NeighborhoodMatrix matrix = new NeighborhoodMatrix();
-		matrix.initMatrix(lists);
-		matrix.setConnect(node1, node2);
-		matrix.setConnect(node2, node3);
-		matrix.setConnect(node3, node6);
-		matrix.setConnect(node6, node5);
-		matrix.setConnect(node5, node4);
-		matrix.setConnect(node4, node1);
-		matrix.setConnect(node1, node5);
-		
+		table.setConnet(yuansu1, yuansu6);
+		table.setConnet(yuansu6, yuansu3);
+		table.setConnet(yuansu3, yuansu2);
+		table.setConnet(yuansu2, yuansu5);
+		table.setConnet(yuansu5, yuansu4);
+		table.setConnet(yuansu4, yuansu1);
+//		table.setConnet(yuansu5, yuansu3);
 
-		for (int i = 0; i < matrix.getMatrix().length; i++) {
-			for (int j = 0; j < matrix.getMatrix().length; j++) {
-				System.out.print("   " + matrix.getMatrix()[i][j]);
-			}
-			System.out.println();
-		}
-
-		traversal(matrix.getMatrix(), 0, matrix);
+		table.outputAll();
+		traversal(table.getAllyuansu(), 0);
 	}
 
-	public static void traversal(int[][] qipan, int i, NeighborhoodMatrix matrix) {
-		int length = qipan.length;
-		for (int k = 0; k < length; k++) {
-			// 判断第i行上的连接情况
-			if (qipan[i][k] > 0) {
-				System.out.println(matrix.getSerialNumbers().get(i).getData());
-				for (int j = 0; j < length; j++) {
-					qipan[j][k] = 0;
+	/**
+	 * 遍历方法
+	 * 
+	 * @param qipan
+	 * @param i
+	 * @param exitNodes
+	 */
+	public static void traversal(List<TableYuansu> qipan, int i) {
+		// 获得第i个元素
+		TableYuansu yuansu = qipan.get(i);
+		// 获得第i个元素的链表
+		LinkList linkList = yuansu.getLinkList();
+		// 如果链表不为空
+		if (linkList != null) {
+			// 获取该链表的第一个结点
+			Node current = linkList.first;
+			// 在结点不为空的情况下
+			while (current != null) {
+				// 如果结点已经存在，则跳过该结点，条到下一个节点
+				while (current != null && exitList.contains(current.getData())) {
+					current = current.next;
 				}
-				traversal(qipan, k, matrix);
+				if (current != null) {
+					System.out.println(qipan.get(current.getData()).getData());
+					exitList.add(current.getData());
+					traversal(qipan, current.getData());
+				}
 			}
 		}
+
 	}
 }

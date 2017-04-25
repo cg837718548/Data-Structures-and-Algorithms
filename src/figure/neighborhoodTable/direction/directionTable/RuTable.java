@@ -28,7 +28,7 @@ public class RuTable {
 	public void setConnet(TableYuansu t1, TableYuansu t2) {
 
 		// 获取元素的列表，并在该列表里添加值
-		t1.getLinkList().insertHead(allyuansu.indexOf(t2));
+		t2.getLinkList().insertHead(allyuansu.indexOf(t1));
 		// t2.getLinkList().insertHead(allyuansu.indexOf(t1));
 	}
 
@@ -36,7 +36,7 @@ public class RuTable {
 	public void setConnet(TableYuansu t1, TableYuansu t2, int pow) {
 
 		// 获取元素的列表，并在该列表里添加值
-		t1.getLinkList().insertHead(allyuansu.indexOf(t2),pow);
+		t2.getLinkList().insertHead(allyuansu.indexOf(t1),pow);
 		// t2.getLinkList().insertHead(allyuansu.indexOf(t1));
 	}
 
@@ -50,4 +50,13 @@ public class RuTable {
 			}
 		}
 	}
+
+	public List<TableYuansu> getAllyuansu() {
+		return allyuansu;
+	}
+
+	public void setAllyuansu(List<TableYuansu> allyuansu) {
+		this.allyuansu = allyuansu;
+	}
+	
 }
