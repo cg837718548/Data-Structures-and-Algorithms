@@ -1,4 +1,4 @@
-package figure.adjacentmultipletables;
+package figure.adjacentMultipleTables;
 
 /**
  * 邻接多重表的边界点类型

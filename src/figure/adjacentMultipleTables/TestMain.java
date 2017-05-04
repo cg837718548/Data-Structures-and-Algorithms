@@ -1,4 +1,4 @@
-package figure.adjacentmultipletables;
+package figure.adjacentMultipleTables;
 /**
  * 邻接多重表测试类
  * @author 83771

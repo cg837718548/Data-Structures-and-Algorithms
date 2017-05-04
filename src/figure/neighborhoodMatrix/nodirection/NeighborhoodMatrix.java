@@ -10,7 +10,7 @@ import java.util.List;
  *
  */
 public class NeighborhoodMatrix {
-	// 定义一个数组，按结点序号存放结点元素
+	// 定义一个集合，按结点序号存放结点元素
 	private List<Node> serialNumbers;
 	// 定义一个矩阵，存放结点元素
 	private int[][] matrix;
@@ -20,7 +20,11 @@ public class NeighborhoodMatrix {
 		int size = nodes.size();
 		serialNumbers = nodes;
 		matrix = new int[size][size];
-
+	}
+	
+	// 获取图的总节点数
+	public int  gainQuantity(){
+		return matrix.length;
 	}
 
 	// 设置结点间的连接方法

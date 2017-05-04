@@ -1,4 +1,4 @@
-package figure.depthtraversal;
+package figure.depthTraversal;
 
 import java.util.ArrayList;
 import java.util.List;
