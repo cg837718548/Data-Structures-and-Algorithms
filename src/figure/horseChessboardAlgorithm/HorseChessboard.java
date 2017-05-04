@@ -1,4 +1,4 @@
-package figure.HorseChessboardAlgorithm;
+package figure.horseChessboardAlgorithm;
 
 /**
  * ÂíÌ£ÆåÅÌËã·¨
@@ -8,8 +8,8 @@ package figure.HorseChessboardAlgorithm;
  */
 public class HorseChessboard {
 
-	public static final int Xmax = 5;
-	public static final int Ymax = 5;
+	public static final int Xmax = 6;
+	public static final int Ymax = 6;
 	public static final int[][] ChessBoard = new int[Xmax][Ymax];
 
 	/**
@@ -135,7 +135,7 @@ public class HorseChessboard {
 	}
 
 	public static void main(String[] args) {
-		Board board = new Board(2, 2);
+		Board board = new Board(3, 3);
 		for (int i = 0; i < Xmax; i++) {
 			for (int j = 0; j < Ymax; j++) {
 				ChessBoard[i][j] = 0;

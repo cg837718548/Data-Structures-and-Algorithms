@@ -1,4 +1,4 @@
-package figure.HorseChessboardAlgorithm;
+package figure.horseChessboardAlgorithm;
 
 /**
  * ÆåÅÌ¸ñ×ÓÀà
