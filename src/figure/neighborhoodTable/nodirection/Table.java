@@ -28,6 +28,11 @@ public class Table {
 		t2.getLinkList().insertHead(allyuansu.indexOf(t1));
 	}
 
+	// 获取图中的结点总数
+	public int gainQuantity() {
+		return allyuansu.size();
+	}
+
 	// 打印出所有的结点连接情况
 	public void outputAll() {
 		for (TableYuansu yuansu : allyuansu) {
@@ -46,6 +51,5 @@ public class Table {
 	public void setAllyuansu(List<TableYuansu> allyuansu) {
 		this.allyuansu = allyuansu;
 	}
-	
-	
+
 }

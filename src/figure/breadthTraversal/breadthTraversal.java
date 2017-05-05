@@ -9,7 +9,7 @@ import figure.neighborhoodMatrix.nodirection.NeighborhoodMatrix;
 import figure.neighborhoodMatrix.nodirection.Node;
 
 /**
- * 图的广度遍历
+ * 图的广度遍历（邻接矩阵）
  * 
  * @author 83771
  *
@@ -59,6 +59,8 @@ public class breadthTraversal {
 
 	public static void main(String[] args) {
 		List<Node> lists = new ArrayList<>();
+		Node node0= new Node("110");
+		lists.add(node0);
 		Node node1 = new Node("111");
 		lists.add(node1);
 		Node node2 = new Node("112");
@@ -69,17 +71,18 @@ public class breadthTraversal {
 		lists.add(node4);
 		Node node5 = new Node("115");
 		lists.add(node5);
-		Node node6 = new Node("116");
-		lists.add(node6);
 
 		NeighborhoodMatrix matrix = new NeighborhoodMatrix();
 		matrix.initMatrix(lists);
+		matrix.setConnect(node0, node1);
+		matrix.setConnect(node0, node2);
+		matrix.setConnect(node0, node3);
 		matrix.setConnect(node1, node2);
-		matrix.setConnect(node1, node3);
+		matrix.setConnect(node1, node4);
+		matrix.setConnect(node2, node3);
 		matrix.setConnect(node2, node4);
-		matrix.setConnect(node2, node6);
+		matrix.setConnect(node2, node5);
 		matrix.setConnect(node3, node5);
-		matrix.setConnect(node3, node6);
 		matrix.setConnect(node4, node5);
 
 		BTSTraveres(matrix);

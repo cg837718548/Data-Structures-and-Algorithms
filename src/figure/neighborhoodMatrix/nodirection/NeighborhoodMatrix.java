@@ -20,10 +20,19 @@ public class NeighborhoodMatrix {
 		int size = nodes.size();
 		serialNumbers = nodes;
 		matrix = new int[size][size];
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if (i == j) {
+					matrix[i][j] = 0;
+				} else {
+					matrix[i][j] = Integer.MAX_VALUE;
+				}
+			}
+		}
 	}
-	
+
 	// 获取图的总节点数
-	public int  gainQuantity(){
+	public int gainQuantity() {
 		return matrix.length;
 	}
 
@@ -33,26 +42,34 @@ public class NeighborhoodMatrix {
 		int n1 = serialNumbers.indexOf(node1);
 		int n2 = serialNumbers.indexOf(node2);
 		matrix[n1][n2] = 1;
-//		matrix[n2][n1] = 1;
+		matrix[n2][n1] = 1;
 	}
 
 	// 设置结点间的连接方法
-		public void setConnect(Node node1, Node node2,int pow) {
+	public void setConnect(Node node1, Node node2, int pow) {
 
-			int n1 = serialNumbers.indexOf(node1);
-			int n2 = serialNumbers.indexOf(node2);
-			matrix[n1][n2] = pow;
-//			matrix[n2][n1] = 1;
-		}
+		int n1 = serialNumbers.indexOf(node1);
+		int n2 = serialNumbers.indexOf(node2);
+		matrix[n1][n2] = pow;
+		matrix[n2][n1] = pow;
+	}
+
 	// 输出图中所有连接点
 	public void Output() {
 		int length = matrix.length;
 		for (int i = 0; i < length; i++) {
 			for (int j = i; j < length; j++) {
-				if (matrix[i][j] >0) {
-					System.out.println(serialNumbers.get(i).getData() + "和" + serialNumbers.get(j).getData() + "相连接"+"权为："+matrix[i][j] );
+				if (matrix[i][j] > 0) {
+					System.out.println(serialNumbers.get(i).getData() + "和" + serialNumbers.get(j).getData() + "相连接"
+							+ "权为：" + matrix[i][j]);
 				}
 			}
+		}
+		for (int i = 0; i < length; i++) {
+			for (int j = 0; j < length; j++) {
+				System.out.print(matrix[i][j] + "   ");
+			}
+			System.out.println();
 		}
 	}
 
@@ -85,6 +102,5 @@ public class NeighborhoodMatrix {
 	public void setMatrix(int[][] matrix) {
 		this.matrix = matrix;
 	}
-	
-	
+
 }
