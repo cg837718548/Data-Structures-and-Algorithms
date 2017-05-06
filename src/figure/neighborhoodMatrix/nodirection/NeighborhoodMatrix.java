@@ -25,7 +25,7 @@ public class NeighborhoodMatrix {
 				if (i == j) {
 					matrix[i][j] = 0;
 				} else {
-					matrix[i][j] = Integer.MAX_VALUE;
+					matrix[i][j] = 37201;
 				}
 			}
 		}
